@@ -6,7 +6,7 @@
 /*   By: aqueiroz <aqueiroz@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 10:26:33 by aqueiroz          #+#    #+#             */
-/*   Updated: 2023/05/28 11:03:58 by aqueiroz         ###   ########.fr       */
+/*   Updated: 2023/05/30 11:51:30 by aqueiroz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	validator(char **argv)
 	int	i;
 	int	places;
 
-	i = 0;
+	i = 1;
 	while (argv[i])
 	{
 		places = check_numbers(argv[i]);

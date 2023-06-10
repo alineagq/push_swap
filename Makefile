@@ -6,7 +6,7 @@
 #    By: aqueiroz <aqueiroz@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 19:39:40 by aqueiroz          #+#    #+#              #
-#    Updated: 2023/05/29 15:21:08 by aqueiroz         ###   ########.fr        #
+#    Updated: 2023/06/04 17:15:03 by aqueiroz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,9 +35,7 @@ _color-test:
 	$(info $(cyan)Message$(reset))
 	$(info $(white)Message$(reset))
 
-# MANDATORY FILES
-
-NAME = push_swap
+# PATHS
 
 SRC_PATH = srcs
 LIB_PATH = libs
@@ -45,10 +43,11 @@ OBJ_PATH = objs
 PATH_INC = includes
 LIBFT_PATH = $(LIB_PATH)/libft
 
-PUSH_FILES = push_swap
+# MANDATORY FILES
 
+NAME = push_swap
+PUSH_FILES = push_swap validators
 PUSH_SRCS = $(addprefix $(SRC_PATH)/, $(addsuffix .c, $(PUSH_FILES)))
-
 PUSH_OBJS = $(PUSH_SRCS:.c=.o)
 
 # FLAGS
@@ -57,15 +56,17 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 LIBFLAGS = -L./$(LIBFT_PATH) -lft
 
+# TARGETS
+
 all: $(NAME)
 
 LIBFT:
-	$(MAKE) -s -k -C $(LIBFT_PATH)
+	@$(MAKE) -s -k -C $(LIBFT_PATH)
 	$(info $(green)Libft installed!$(reset))
 
 $(NAME): LIBFT $(PUSH_OBJS)
-	$(CC) $(PUSH_OBJS) $(INCLUDE) $(LIBFLAGS) -o $@
-	$(info $(purple)Server created. Run './server' to start.$(reset))
+	@$(CC) $(PUSH_OBJS) $(INCLUDE) $(LIBFLAGS) -o $@
+	$(info $(purple)Server created. Run './push_swap' to start.$(reset))
 
 valgrind:
 	valgrind --track-origins=yes --error-exitcode=42 --leak-check=full --show-leak-kinds=all --quiet ./push_swap
