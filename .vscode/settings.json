@@ -1,4 +1,8 @@
 {
     "42header.email": "aqueiroz@student.42sp.org.br",
-    "42header.username": "aqueiroz"
+    "42header.username": "aqueiroz",
+    "sonarlint.connectedMode.project": {
+        "connectionId": "github",
+        "projectKey": "alineagq_push_swap"
+    }
 }
