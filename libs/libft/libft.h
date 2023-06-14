@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aqueiroz <aqueiroz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aqueiroz <aqueiroz@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 13:59:16 by aqueiroz          #+#    #+#             */
-/*   Updated: 2023/04/15 15:06:17 by aqueiroz         ###   ########.fr       */
+/*   Updated: 2023/06/14 09:56:51 by aqueiroz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdarg.h>
+# include <errno.h>
+# include <string.h>
 # define HEX_LW "0123456789abcdef"
 # define HEX_UP "0123456789ABCDEF"
 # ifndef SIZE_MAX
@@ -96,4 +98,11 @@ int		ft_printhex_lw(unsigned int hex, int len);
 int		ft_printptr(unsigned long long ptr);
 int		ft_printunbr(unsigned int nbr);
 int		ft_printhex_add(unsigned long long hex, int len);
+
+// FDF FUNCTIONS
+
+void	raise_error(int err);
+int		ft_open(char *file);
+char	*ft_strtok(char *str, const char *c);
+
 #endif
