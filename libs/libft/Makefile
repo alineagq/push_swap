@@ -6,7 +6,7 @@
 #    By: aqueiroz <aqueiroz@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/29 15:06:40 by aqueiroz          #+#    #+#              #
-#    Updated: 2023/06/14 09:14:18 by aqueiroz         ###   ########.fr        #
+#    Updated: 2023/06/14 11:16:51 by aqueiroz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRCS = $(addprefix $(PATH_SRC), \
 	ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c ft_striteri.c ft_substr.c ft_strjoin.c \
 	ft_itoa.c ft_strmapi.c ft_strtrim.c ft_split.c get_next_line.c ft_printchar.c \
 	ft_printf.c ft_printhex.c ft_printnbr.c ft_printptr.c ft_printstr.c ft_printunbr.c \
-	ft_uitoa.c ft_open.c ft_strtok.c raise_error.c)
+	ft_uitoa.c ft_open.c ft_strtok.c raise_error.c ft_strcmp.c ft_atoll.c)
 
 OBJS := ${SRCS:.c=.o}
 

@@ -6,7 +6,7 @@
 /*   By: aqueiroz <aqueiroz@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 13:59:16 by aqueiroz          #+#    #+#             */
-/*   Updated: 2023/06/14 09:56:51 by aqueiroz         ###   ########.fr       */
+/*   Updated: 2023/06/14 11:17:09 by aqueiroz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@
 # define HEX_UP "0123456789ABCDEF"
 # ifndef SIZE_MAX
 #  define SIZE_MAX 2147483647
+# endif
+# ifndef SIZE_MIN
+#  define SIZE_MIN -2147483648
 # endif
 # define BUFFER_SIZE 1
 
@@ -105,4 +108,9 @@ void	raise_error(int err);
 int		ft_open(char *file);
 char	*ft_strtok(char *str, const char *c);
 
+
+// PUSH SWAP FUNCTIONS
+
+int			ft_strcmp(const char *s1, const char *s2);
+long	long	ft_atoll(const char *str);
 #endif
