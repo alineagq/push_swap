@@ -6,7 +6,7 @@
 /*   By: aqueiroz <aqueiroz@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 08:04:01 by aqueiroz          #+#    #+#             */
-/*   Updated: 2023/06/12 15:44:05 by aqueiroz         ###   ########.fr       */
+/*   Updated: 2023/06/14 09:48:58 by aqueiroz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	t_node	*stack_a;
-	t_node	*stack_b;
+	// t_list	*stack_a;
+	// t_list	*stack_b;
 
 	if (argc < 2)
 		return (0);

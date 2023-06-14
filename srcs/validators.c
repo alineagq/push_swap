@@ -6,85 +6,94 @@
 /*   By: aqueiroz <aqueiroz@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 10:26:33 by aqueiroz          #+#    #+#             */
-/*   Updated: 2023/05/30 11:51:30 by aqueiroz         ###   ########.fr       */
+/*   Updated: 2023/06/14 10:08:58 by aqueiroz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	check_numbers(char *str)
+void	check_numbers(char **argv)
 {
-	int	i;
-
-	i = 0;
-	if (!str || !*str)
-		return (0);
-	if (*str == '-' || *str == '+')
-		str++;
-	while (str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (0);
-		i++;
-	}
-	return (i);
-}
-
-int	find_duplicate(char **args, int i)
-{
-	int		j;
-	size_t	len;
-	size_t	len_cmp;
-
-	j = i + 1;
-	len = ft_strlen(args[i]);
-	while (args[j])
-	{
-		len_cmp = ft_strlen(args[j]);
-		if (len > len_cmp)
-			len_cmp = len;
-		if (!ft_strncmp(args[i], args[j], len_cmp))
-			return (0);
-		j++;
-	}
-	return (1);
-}
-
-int	invalid_int(char *num, int places)
-{
-	ssize_t	n;
-
-	n = ft_atoi(num);
-	if (places > 10)
-		return (1);
-	else if (n < -(long)((unsigned int)(1 << 31)))
-		return (1);
-	else if (n > (ssize_t)((unsigned int) ~ (1 << 31)))
-		return (1);
-	return (0);
-}
-
-void	print_error(void)
-{
-	ft_printf("Error!\n");
-	exit(0);
-}
-
-void	validator(char **argv)
-{
-	int	i;
-	int	places;
+	int		i;
 
 	i = 1;
 	while (argv[i])
 	{
-		places = check_numbers(argv[i]);
-		if (!check_numbers(argv[i]))
-			print_error();
-		if (!find_duplicate(argv, i))
-			print_error();
-		if (invalid_int(argv[i], places))
-			print_error();
+		if (*argv[i] == '-' || *argv[i] == '+')
+			argv[i]++;
+		while (ft_isdigit(*argv[i]))
+			argv[i]++;
+		if (*argv[i] != '\0')
+			raise_error(EINVAL);
 		i++;
 	}
+}
+
+void find_duplicate(char **args)
+{
+    int i = 1;
+
+    while (args[i] != NULL)
+    {
+        int j = i + 1;
+
+        while (args[j] != NULL)
+        {
+            int num1 = ft_atoi(args[i]);
+            int num2 = ft_atoi(args[j]);
+
+            if (num1 == num2)
+            {
+                ft_printf("Error: Duplicate numbers found!\n");
+                exit(1);
+            }
+
+            j++;
+        }
+
+        i++;
+    }
+}
+
+void invalid_int(char **argv)
+{
+	int i = 1;
+
+	while (argv[i])
+	{
+		const char *num = argv[i];
+		int places = 0;
+		char c;
+
+		if (*num == '-' || *num == '+')
+			num++;
+
+		while ((c = num[places]))
+		{
+			if (!ft_isdigit(c))
+			{
+				ft_printf("Error: Invalid number format!\n");
+				exit(1);
+			}
+
+			places++;
+		}
+
+		ssize_t n = ft_atoi(argv[i]);
+
+		if (places > 10 || n < -(long)((unsigned int)(1 << 31)) || n > (ssize_t)((unsigned int)~(1 << 31)))
+		{
+			ft_printf("Error: Invalid integer value!\n");
+			exit(1);
+		}
+
+		i++;
+	}
+}
+
+void validator(char **argv)
+{
+	check_numbers(argv);
+	find_duplicate(argv);
+	invalid_int(argv);
 }
