@@ -6,7 +6,7 @@
 /*   By: aqueiroz <aqueiroz@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 10:26:33 by aqueiroz          #+#    #+#             */
-/*   Updated: 2023/06/14 12:11:40 by aqueiroz         ###   ########.fr       */
+/*   Updated: 2023/06/14 18:13:57 by aqueiroz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static void	check_integer_bounds(int argc, char *argv[])
 		return ;
 
 	num = ft_atoll(argv[1]);
-	if (num > SIZE_MAX || num < SIZE_MIN)
+	if (num > 2147483647 || num < -2147483648)
 		raise_error(EINVAL);
 	check_integer_bounds(argc - 1, argv + 1);
 }

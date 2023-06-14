@@ -6,7 +6,7 @@
 #    By: aqueiroz <aqueiroz@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/29 15:06:40 by aqueiroz          #+#    #+#              #
-#    Updated: 2023/06/14 11:16:51 by aqueiroz         ###   ########.fr        #
+#    Updated: 2023/06/14 18:26:23 by aqueiroz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,15 +24,11 @@ SRCS = $(addprefix $(PATH_SRC), \
 	ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c ft_striteri.c ft_substr.c ft_strjoin.c \
 	ft_itoa.c ft_strmapi.c ft_strtrim.c ft_split.c get_next_line.c ft_printchar.c \
 	ft_printf.c ft_printhex.c ft_printnbr.c ft_printptr.c ft_printstr.c ft_printunbr.c \
-	ft_uitoa.c ft_open.c ft_strtok.c raise_error.c ft_strcmp.c ft_atoll.c)
-
-OBJS := ${SRCS:.c=.o}
-
-BONUS_SRCS = $(addprefix $(PATH_SRC), \
-    ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+	ft_uitoa.c ft_open.c ft_strtok.c raise_error.c ft_strcmp.c ft_atoll.c \
+	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 	ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c)
 
-BONUS_OBJS := ${BONUS_SRCS:.c=.o}
+OBJS := ${SRCS:.c=.o}
 
 all: $(NAME)
 
@@ -43,17 +39,11 @@ $(OBJS): $(SRCS)
 	@cc $(GCCFLAGS) -I $(PATH_INCLUDE) -c $(SRCS)
 
 clean:
-	@rm -f $(OBJS) $(BONUS_OBJS)
+	@rm -f $(OBJS)
 
 fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
-
-bonus: $(BONUS_OBJS)
-
-$(BONUS_OBJS): $(BONUS_SRCS)
-	@cc $(GCCFLAGS) -I $(PATH_INCLUDE) -c $(BONUS_SRCS)
-	@ar rc $(NAME) $(BONUS_OBJS)
 
 .PHONY: all clean fclean re

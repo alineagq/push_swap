@@ -6,7 +6,7 @@
 #    By: aqueiroz <aqueiroz@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 19:39:40 by aqueiroz          #+#    #+#              #
-#    Updated: 2023/06/14 10:32:45 by aqueiroz         ###   ########.fr        #
+#    Updated: 2023/06/14 18:15:33 by aqueiroz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ LIBFT_PATH = $(LIB_PATH)/libft
 # MANDATORY FILES
 
 NAME = push_swap
-PUSH_FILES = push_swap validators
+PUSH_FILES = push_swap validators parsing
 PUSH_SRCS = $(addprefix $(SRC_PATH)/, $(addsuffix .c, $(PUSH_FILES)))
 PUSH_OBJS = $(PUSH_SRCS:.c=.o)
 
