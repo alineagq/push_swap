@@ -6,7 +6,7 @@
 /*   By: aqueiroz <aqueiroz@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 08:07:57 by aqueiroz          #+#    #+#             */
-/*   Updated: 2023/05/29 15:36:22 by aqueiroz         ###   ########.fr       */
+/*   Updated: 2023/06/14 10:50:11 by aqueiroz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@
 
 // Validations
 
-void	validator(char **argv);
+void	validator(int argc, char **argv);
 
 #endif

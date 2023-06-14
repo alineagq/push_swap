@@ -6,7 +6,7 @@
 #    By: aqueiroz <aqueiroz@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 19:39:40 by aqueiroz          #+#    #+#              #
-#    Updated: 2023/06/04 17:15:03 by aqueiroz         ###   ########.fr        #
+#    Updated: 2023/06/14 10:32:45 by aqueiroz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,7 @@ PUSH_OBJS = $(PUSH_SRCS:.c=.o)
 # FLAGS
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
 LIBFLAGS = -L./$(LIBFT_PATH) -lft
 
 # TARGETS

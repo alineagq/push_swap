@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aqueiroz <aqueiroz@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/28 08:04:01 by aqueiroz          #+#    #+#             */
-/*   Updated: 2023/06/14 10:50:32 by aqueiroz         ###   ########.fr       */
+/*   Created: 2023/06/14 12:13:22 by aqueiroz          #+#    #+#             */
+/*   Updated: 2023/06/14 12:14:27 by aqueiroz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+void	parsing(char **argv, t_list *stack_a)
 {
-	// t_list	*stack_a;
-	// t_list	*stack_b;
-
-	if (argc < 2)
-		return (0);
-	validator(argc, argv);
-	return (0);
+	return ;
 }
